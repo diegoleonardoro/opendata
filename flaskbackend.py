@@ -142,10 +142,6 @@ def fetch_and_cache_data(data_source):
 # Schedule the fetch_and_cache_data to run daily at 4:00 AM
 scheduler.add_job(fetch_and_cache_data, 'cron', args=['311calls'], hour=4)
 
-@app.route('/')
-def hello_world():
-    return 'Hello, Worls!'
-
 
 @app.route('/311calls', methods=['GET'])
 @cross_origin(origin='*', supports_credentials=True)
